@@ -3,7 +3,7 @@ body {
 }
 
 p {
-	font-size: 1.1;
+	font-size: 1.1em;
 }
 
 .rh img{
@@ -272,7 +272,7 @@ footer .footnav li {
 
 .shop-item-desc {
 	height:50px;
-	font-size: 1.1.em;
+	font-size: 1.1em;
 	font-weight:bold;
 }
 

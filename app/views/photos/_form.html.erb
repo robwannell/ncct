@@ -1,0 +1,35 @@
+<%= bootstrap_form_for(@photo, :html => { :multipart => true }) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= f.text_field :title, label: "Caption" %>
+  </div>
+
+    <div class="field">
+    <% unless @photo.avatar.blank? %>
+    <p><b>Current image</b><br/><%= link_to (image_tag @photo.avatar.url(:thumb)), @photo.avatar.url(:display), target: '_blank' %> </p><%= f.file_field :avatar, label: 'Change this photo'%></p>
+    <% else %>
+    <%= f.file_field :avatar, label: 'Add a photo'%>
+    <% end %>
+  </div>
+	
+ <% if @album_id %>
+  <%= f.select(:album_id, Album.all.collect {|p| [ p.title, p.id ] }, :selected => @album_id) %>
+  <% else %>
+  <%= f.select(:album_id, Album.all.collect {|p| [ p.title, p.id ] }) %>
+<% end %>
+  <div class="actions">
+    <%= f.submit 'Add photo', class: 'btn btn-default pull-right' %>
+  </div>
+<% end %>

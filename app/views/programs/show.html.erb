@@ -1,0 +1,37 @@
+<div class="programs">
+<h2><%= @program.title %>  </h2>	
+
+<dl class="dl-horizontal program-details">
+  <dt>Staff:  </dt>
+  <dd><%= @program.staff1_title %> <b><%= @program.staff1_firstname %> <%= @program.staff1_lastname %></b><% unless @program.staff2_firstname.blank? %>, <%= @program.staff2_title %><% end %>
+	  <b><%= @program.staff2_firstname %> <%= @program.staff2_lastname %></b></dd>
+
+
+	<dt></dt>
+	<dd>
+
+<dt>Location </dt>
+<dd><%= @program.address %>, <%= @program.city %>, <%= @program.state %> <%= @program.zip %></dd>
+	
+<dt>Tel: </dt><dd><%= @program.phone %></dd>
+
+<% unless @program.fax.blank?  %>
+<dt>Fax: </dt>
+<dd><%= @program.fax %> </dd><% end %>
+	<hr>
+<dt>Requirements: </dt>
+<dd class="reqs"><%= simple_format(@program.requirements) %></dd>
+<hr>
+<dt>Program Info: </dt>
+<dd class="reqs"><%= simple_format(@program.body) %></dd>
+
+</dl>
+
+
+</div>
+<%= link_to 'Back', programs_path %>
+
+
+<%= content_for :rh do %>
+<% if current_user %><%= link_to 'Edit this Program', edit_program_url(@program), class: 'btn btn-default'%><% end %>
+<% end %>

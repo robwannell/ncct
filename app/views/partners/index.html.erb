@@ -1,0 +1,29 @@
+
+
+<h1>NCCT's Partnerships & Projects</h1>
+
+
+    <% @partners.each do |partner| %>
+ <div class="partner">
+ <h3><%= partner.title %> <% if current_user %><small><%= link_to 'Edit', edit_partner_path(partner) %> | <%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></small><% end %></h3>
+    <% if partner.avatar_file_name %>
+	<%= image_tag partner.avatar.url(:thumb), align: "left" %>
+ <% end %>
+ <%= simple_format(partner.body) %>
+    </div>
+    <% end %>
+ 
+<% content_for :rh do %>
+
+<%= render "/layouts/shop_ad.html.erb"%>
+<% if current_user %>
+
+
+<div class="well">
+<span class="glyphicon glyphicon-info-sign info"></span><h4>Add a Partner or Project</h4>
+
+<%= link_to 'New Partner/Project', new_partner_path, class: "btn btn-default"%>
+</div>
+<% end %>
+
+<% end %>

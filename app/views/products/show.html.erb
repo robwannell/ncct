@@ -1,0 +1,36 @@
+<h1>
+  <%= @product.name %>
+</h1>
+
+<h3>Price: $<%= @product.price %></h3>
+
+<h5>Item#<%= @product.item %></h5>
+
+<div class="product-image"><%= image_tag @product.avatar.url(:medium)%></div>
+
+<h5>Description:</h5>
+  <%= simple_format(@product.description) %>
+
+
+
+<%= link_to 'Back', products_path %>
+
+
+<% content_for :rh do %>
+
+<div class="well">
+	<h3>Purchase NCCT products</h3>
+	<p>All products are hand crafted and built by our students in each program. We can customize any item to your preference. Cost includes materials!</p>
+
+	<p>Please mail this completed order form and payment to:
+		<p><b> NCCT,<br/>
+			P.O. Box 293585,
+			<br/>Sacramento,<br/>
+			CA 95829-3585</b></p>
+
+	<p>Non-Profit: <strong>Tax ID 68-0360766</strong></p>
+
+	<p style="color:red;">[ORDER FORM HERE]</p>
+	
+</div>
+<% end %>

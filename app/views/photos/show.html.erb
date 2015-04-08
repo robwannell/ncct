@@ -1,0 +1,36 @@
+
+ 
+
+<div class="album-nav">
+	 <h4><%= @photo.album.title %></h4>
+	<%= image_tag @photo.avatar.url(:display)%>
+<h3><%= @photo.title %></h4>
+
+<% if @prev_photo %>
+<%= link_to 'Prev', @prev_photo, class: "btn btn-default" %> 
+<% else %>
+<%= link_to 'Prev', @prev_photo, class: "btn btn-default disabled" %> 
+<% end %>
+<% if @next_photo %>
+<%= link_to 'Next', @next_photo, class: "btn btn-default" %>
+<% else %>
+<%= link_to 'Next', @next_photo, class: "btn btn-default disabled" %> 
+<% end %>
+
+</div>
+
+<% content_for :rh do %>
+<div class="well">
+	<%= link_to 'Back to the Album', @photo.album, class: "btn btn-default" %>
+<%= link_to 'Back to the Gallery', gallery_path, class: "btn btn-default" %>
+</div>
+<% if current_user %>
+<div class="well">
+	<h4>Admin options</h4>
+	
+	<%= link_to 'Edit this Photo', edit_photo_path, class: "btn btn-default"  %> <%= link_to 'Destroy Photo', @photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+	
+</div>
+<% end %>
+
+<% end %>

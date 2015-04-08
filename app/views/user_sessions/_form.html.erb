@@ -1,0 +1,13 @@
+<%= bootstrap_form_tag url: '/create', :method => :post do |f| %>
+  <div class="field">
+    
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+   
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login", class: "btn pull-right"%>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="smallform">
+	<%= bootstrap_form_for(@reception) do |f| %>
+  <% if @reception.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reception.errors.count, "error") %> prohibited this reception from being saved:</h2>
+
+      <ul>
+      <% @reception.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit :submit, class: "btn btn-default pull-right" %>
+  </div>
+<% end %>
+</div>

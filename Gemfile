@@ -1,5 +1,30 @@
 source 'https://rubygems.org'
 
+# gem 'therubyracer', platforms: :ruby
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+
+
+gem 'capistrano-rbenv'
+gem 'therubyracer', :platforms => :ruby
+
+
+
+gem 'sorcery'
+
+gem 'bootstrap_form'
+
+gem "paperclip", "~> 4.2"
+
+gem 'will_paginate', '~> 3.0.6'
+
+gem "friendly_id"
+
+gem 'validates_email_format_of'
+
+gem 'gmaps4rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

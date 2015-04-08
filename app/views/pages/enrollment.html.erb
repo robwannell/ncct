@@ -1,0 +1,44 @@
+<h1>Enrollment in NCCT Programs</h1>
+
+<p>In order to enroll in one of our programs,
+
+<ul>
+<li>You must be *16 or over</li>
+<li>You must know how to work as part of a team</li>
+<li>You must be able to get up early and get to school on time</li>
+<li>You must be willing to work outdoors</li>
+<li>You must be willing to work drug and alcohol free</li>
+</ul>
+
+<p><b>*If you are under the age of 18 you must be engaged either in an Adult Education Program or in Independent Studies
+<p>**Enrollment is year round and open to all!!!!! 
+	
+	<p> To enroll, please click on the program below that best fits your needs and follow the step by step instructions.</b></p>
+	
+	
+<table class="table table-hover">
+    <thead>
+      <tr>
+	
+	<th>Program</th><th>Location</th><th>Instructor</th><th></th>
+	
+</tr>
+</thead>
+<tbody>
+ <% @programs.each do |program| %>
+ 
+<tr><td> <%= link_to program.title, program %> </td><td><%= program.city %></td><td> <%= program.staff1_title %> <%= program.staff1_firstname %> <%= program.staff1_lastname %></td><td><%= link_to 'more', program_path(program)%> <span class="glyphicon glyphicon-share-alt more"></span></td></tr>
+
+
+ <% end %>
+</tbody>
+</table>
+
+<% content_for :rh do %>
+
+<%= image_tag 'girlsaw.jpg' %>
+<%= image_tag 'sawing.jpg' %>
+<%= image_tag 'demo.jpg' %>
+
+
+<% end %>

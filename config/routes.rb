@@ -1,5 +1,63 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  
+  
+
+  resources :photos
+  match 'set_cover', to: 'albums#set_cover', via: 'get'
+  resources :albums
+
+  resources :partners
+
+  resources :announcements
+
+  resources :products
+
+  get 'contact/index'
+
+  get 'contact/new'
+
+  get 'contact/create'
+
+  resources :receptions
+
+  resources :bios
+
+  resources :programs
+
+  resources :user_sessions
+  resources :users
+
+  get 'login' => 'user_sessions#new', :as => :login
+  match '/create', to: 'user_sessions#create', via: 'post'
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+  
+  
+  resources :contact, only: [:new, :create]
+  get '/contact', to: 'contact#new'
+  match '/send_mail', to: 'contact#send_mail', via: 'post'
+  
+ 
+  get '/admin' => 'admin#index'
+
+  get '/about' => 'pages#about'
+  
+  get '/team' => 'pages#team'
+
+  get '/careers' => 'pages#careers'
+
+  get '/curriculum' => 'pages#curriculum'
+
+  get '/success' => 'pages#success'
+  
+  get '/enrollment' => 'pages#enrollment'
+  
+  get '/gallery' => 'pages#gallery'
+  
+  
+
+   
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

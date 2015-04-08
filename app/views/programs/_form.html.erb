@@ -1,0 +1,78 @@
+<div class="smallform">
+
+<%= bootstrap_form_for(@program, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <% if @program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% @program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.text_field :title, label: 'Program Title' %>
+  </div>
+  <div class="field breather">
+	  <h4>Program Location</h4>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+   <%= f.select :state, options_for_select(us_states, :selected => 'CA') %>
+  </div>
+  <div class="field">
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.text_field :fax %>
+  </div>
+  
+  
+  <div class="field breather">
+	  <h4>Primary Instructor / Course Leader</h4>
+    <%= f.text_field :staff1_firstname, label: 'Firstname' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :staff1_lastname, label: 'Lastname' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :staff1_title, label: 'Title', placeholder: 'Supervisor, Instructor, etc' %>
+  </div>
+  
+  <div class="field breather">
+	  <h4>Secondary Instructor / Course Leader (if applicable)</h4>
+    <%= f.text_field :staff2_firstname, label: 'Firstname' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :staff2_lastname, label: 'Lastname' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :staff2_title, label: 'Title', placeholder: 'Supervisor, Instructor, etc' %>
+  </div>
+
+	<div class="field breather">
+	  <h4>Program Information</h4>
+    <%= f.text_area :requirements, rows: '4', label: 'Program Requirements', placeholder: 'Must be 16 or older, willing to work outdoors, etc' %>
+  </div>
+
+	<div class="field">
+
+    <%= f.text_area :body, rows: '6', label: 'Program Details', placeholder: 'Course content, Application procedure, etc' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :submit, class: "btn  pull-right"%>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,35 @@
+<div class="smallform"><%= bootstrap_form_for(@partner) do |f| %>
+  <% if @partner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@partner.errors.count, "error") %> prohibited this partner from being saved:</h2>
+
+      <ul>
+      <% @partner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+	  
+	    <div class="field">
+	    <% unless @partner.avatar.blank? %>
+	    <p><b>Current image</b><br/><%= link_to (image_tag @partner.avatar.url(:thumb)), @partner.avatar.url(:medium), target: '_blank' %> </p><%= f.file_field :avatar, label: 'Add a new logo'%></p>
+	    <% else %>
+	    <%= f.file_field :avatar, label: 'Add a logo (not required)'%>
+	    <% end %>
+	  </div>
+   
+    <%= f.text_area :body, label: "Description", rows: "6", placeholder: "Any further info about the project or partnership" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :submit, class: "btn btn-default pull-right" %>
+  </div>
+<% end %>
+
+</div>

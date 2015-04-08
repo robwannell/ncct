@@ -1,0 +1,20 @@
+<h1>Reception Email</h1>
+
+<p>Set the email address that receives the inquires from this site.<p>
+<% if @reception %>
+	<p><%= @reception.name %>
+
+   <p><%= @reception.email %>
+	
+	<p><%= link_to 'Change reception email', edit_reception_path(@reception) %>
+	<% else %>	
+	<%= link_to 'Set reception email', new_reception_path %>
+	
+<% end %>
+		
+		
+		
+		
+		
+		
+	

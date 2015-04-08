@@ -1,0 +1,56 @@
+<h1>NCCT Products for sale</h1>
+
+
+<p>Display products by 
+	<% if params[:sort]=='newest' or @default=='selected'%>
+	<%= link_to 'most recent',{:sort => "newest"}, :class=> "label label-primary" %>
+	<% else %><%= link_to 'most recent',  :sort => "newest" %><% end %> | 
+	
+	<% if params[:sort]=='low_to_high'%>
+	<%= link_to 'price (low to high)',{:sort => "low_to_high"}, :class=> "label label-primary" %>
+	<% else %><%= link_to 'price (low to high)',  :sort => "low_to_high" %><% end %> |
+	
+	<% if params[:sort]=='high_to_low'%>
+	<%= link_to 'price (high to low)',{:sort => "high_to_low"}, :class=> "label label-primary" %>
+	<% else %><%= link_to 'price (high to low)',  :sort => "high_to_low" %><% end %> 
+	
+	
+	
+
+
+    <% @products.each do |product| %>
+     <div class="shop-item">
+	 <div class="shop-item-img"> <%= image_tag product.avatar.url(:thumb) %></div>
+	  <div class="shop-item-desc"> <%= product.name %> </div>
+	 <div class="shop-item-item">item#<%= product.item %></div>
+	  <h5>$<%= product.price %></h5>
+	  <p><%= link_to 'More Info', product, class: "btn btn-primary shop-item-btn" %>
+	 </div>
+      
+    <% end %>
+ 
+ 
+<% content_for :rh do %>
+
+<div class="well">
+	<h3>Purchase NCCT products</h3>
+	<p>All products are hand crafted and built by our students in each program. We can customize any item to your preference. Cost includes materials!</p>
+
+	<p>Please mail this completed order form and payment to:
+		<p><b> NCCT,<br/>
+			P.O. Box 293585,
+			<br/>Sacramento,<br/>
+			CA 95829-3585</b></p>
+
+	<p>Non-Profit: <strong>Tax ID 68-0360766</strong></p>
+
+	<p style="color:red;">[ORDER FORM HERE]</p>
+	
+</div>
+
+
+<% if current_user %>
+<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
+<% end %>
+<% end %>
+

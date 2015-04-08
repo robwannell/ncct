@@ -1,2 +1,43 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="welcome"><h1>Looking for a job?<br/>Or even better – a career?</h1>
+	<h1>We may be able to help.</h1>
+</h1></div>
+<h3>NCCT has one goal – preparing YOU for a Career in Construction</h3>
+<p>In the classroom you will study subjects all related to construction.  The math and reading you do will have practical applications that can be applied to your future jobs in the field.</p>
+<p>NCCT will teach you many different things: foundations, framing and roofs, running conduit, and installing air conditioners just to name a few. </p>
+
+<p>In the past, NCCT students have built homes, parks, and other community projects.  You too will learn how to do all this under the direction of our Carpenter-Instructors who have years of experience in building and working with students. They have helped over 1000 of our graduates get apprenticeships with the Unions and they can do it for you, too. </p>
+
+<h4>Preparing for a career in construction involves more than just sitting in a classroom. </h4>
+<p>We make sure that you have the life skills needed for on the job training. </p>
+ <p>If you have personal needs, we always do our best to help. We offer GED preparation and testing, work boots and tools.  
+NCCT works closely with other organizations and partners to make sure you have all the proper resources you need to succeed.</p>
+
+
+<% content_for :rh do %>
+
+
+
+<div class="leaders well">
+	
+<h4>We have an 85% record of success over 12 years<br/>
+<small>NCCT has a clear mission and purpose! <span class="learnmore"><%= link_to 'Learn more', '#'%> <span class="glyphicon glyphicon-share-alt"></span></span></small></h4>
+
+
+<h4>We teach you useful and practical skills<br/>
+<small>Like how to convert fractions into decimals, read a tape measure, blueprint and much more. <span class="learnmore"><%= link_to 'Learn more', '#'%> <span class="glyphicon glyphicon-share-alt"></span></span></small></h4>
+	
+	
+<h4>We’ll set you on a Career Path<br/>
+<small>When your instructor thinks you’re ready, NCCT will go to bat for you. <span class="learnmore"><%= link_to 'Learn more', '#'%> <span class="glyphicon glyphicon-share-alt"></span></span></small></h4>
+	
+	
+<h4>Our Instructors and Staff are the key <br/>
+<small>NCCT offers you dynamic comprehensive training at all levels. <span class="learnmore"><%= link_to 'Learn more', '#'%> <span class="glyphicon glyphicon-share-alt"></span></span></small></h4>
+
+</div>
+
+<% if @news %>
+<%= render "/layouts/news.html.erb" %>
+<% end %>
+<%= render "/layouts/shop_ad.html.erb" %>
+<% end %>

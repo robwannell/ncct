@@ -1,0 +1,10 @@
+<div class="well shop-ad">
+	
+	<h4><span class="glyphicon glyphicon-globe"></span> <%= @news.title %></h4>
+	<p><%= truncate(@news.body, 
+  length: 100, 
+  separator: ' ', 
+  omission: '... ') {     
+    link_to "read more", @news 
+} %> <span class="glyphicon glyphicon-share-alt more"></span></span>
+</div>

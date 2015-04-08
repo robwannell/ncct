@@ -1,0 +1,41 @@
+<div class="smallform">
+	<%= bootstrap_form_for(@announcement) do |f| %>
+  <% if @announcement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
+
+      <ul>
+      <% @announcement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= f.text_field :title %>
+  </div>
+  
+    <div class="field">
+    <% unless @announcement.avatar.blank? %>
+    <p><b>Current image</b><br/><%= link_to (image_tag @announcement.avatar.url(:thumb)), @announcement.avatar.url(:medium), target: '_blank' %> </p><%= f.file_field :avatar, label: 'Add a new image'%></p>
+    <% else %>
+    <%= f.file_field :avatar, label: 'Add an image'%>
+    <% end %>
+  </div>
+  
+  <div class="field">
+   
+    <%= f.text_area :body, rows: "10" %>
+  </div>
+  
+   
+  
+  
+  <div class="actions">
+    <%= f.submit :submit, class: "pull-right btn btn-default" %>
+  </div>
+<% end %>
+
+</div>

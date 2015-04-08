@@ -1,0 +1,21 @@
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+		<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About NCCT<span class="caret"></span></a>
+		          <ul class="dropdown-menu drops" role="menu">
+		            <li class="<%= 'active' if current_page?(careers_path) %>"><%= link_to "About Us", about_path %></li>
+					 <li ><%= link_to "Success Stories", success_path %></li>
+		            <li><%= link_to "Meet the Team", team_path %></li>
+		            <li ><%= link_to "Gallery", gallery_path %></li>
+					
+		          </ul>
+		        </li>
+		  <li class="<%= 'active' if current_page?(careers_path) %>"> <%= link_to "Careers", careers_path %></li>
+		  <li class="<%= 'active' if current_page?(curriculum_path) %>"><%= link_to "Curriculum", curriculum_path %></li>
+		  <li class="<%= 'active' if current_page?(enrollment_path) or params[:controller] == "programs" %>"><%= link_to "Enrollment", enrollment_path %></li>
+		  <li class="<%= 'active' if current_page?(products_path) %>"><%= link_to "Purchase Products", products_path %></li>
+		 
+		  <li class="<%= 'active' if current_page?(announcements_path) %>"><%= link_to "News/Events", announcements_path %></li>
+		  <li class="<%= 'active' if current_page?(partners_path) %>"><%= link_to "Partnerships", partners_path %></li>
+		  <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+		 
+          

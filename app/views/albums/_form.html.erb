@@ -1,0 +1,28 @@
+<div class="smallform">
+	<%= bootstrap_form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+  
+    <%= f.text_area :description, rows: "5", placeholder: "Add a short description for this album" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :submit, class: "pull-right btn btn-default" %>
+  </div>
+<% end %>
+</div>

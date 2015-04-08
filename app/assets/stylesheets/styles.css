@@ -1,0 +1,347 @@
+body {
+	background-color: #0F3055;
+}
+
+p {
+	font-size: 1.1em;
+}
+
+.rh img{
+	border:1px solid #efefef;
+	text-align: center;
+	margin: 10px 50px 10px;
+	padding:10px;
+}
+.lead {
+	
+	font-size: 1.7em;
+}
+.contact {
+	color:#fff;
+	text-align:right;
+}
+
+.contact a {
+	color:#fff;
+}
+
+
+.comment {
+	color:#fff;
+	font-size: 1.4em;
+	margin-top:7px;
+}
+.wrapper {
+	background-color: #efefef;
+}
+
+.pagecontainer {
+	padding: 20px 0;
+	
+}
+
+.page {
+	background-color: #fbfbfb;
+	padding: 20px;
+	border:5px solid #fff;
+}
+
+.rh {
+	
+}
+
+.headerbg {
+	background-image: url("bg.png");
+	height:131px;
+}
+
+.adminlogin {
+	padding-top:50px;
+}
+.adminbadge {
+	background-color:#ff6600;
+	padding:10px;
+}
+
+.logodiv {
+	background-image: url("logo.png");
+	image-repeat: none;
+	height:131px;
+} 
+
+.navbg {
+	background-color:#777;
+	height: 50px;
+	border-bottom: #3FA9F5 solid 5px;
+}
+.nav {
+	margin-top:-1px;
+	background-color:#777;
+	border-bottom: #3FA9F5 solid 5px;
+	height: 50px;
+}
+
+.nav  a { 
+	height: 50px;
+	color: #fff;
+	
+	text-transform: uppercase;color: #fff;
+	
+}
+.nav .active a { color: #fff; background:#3FA9F5!important;
+}
+
+.nav a:hover { color: #fff; background:#FF6600!important;
+	border-bottom: 5px solid #3FA9F5;
+	
+	
+}
+.navbar .nav > li.dropdown.open.active > a:hover, 
+.navbar .nav > li.dropdown.open > a
+{
+   color: #fff;
+   background-color: #ff6600;
+   border-color: #fff;
+}
+
+.dropdown-menu li{
+	background-color:#fff;
+	
+}
+
+.dropdown-menu li.dropdown.active.open {
+	color:red;
+	height:50px;
+}
+.drops li a{
+	color:#333;
+	background:#fff!important;
+	border-bottom: 0px solid ;
+}
+.drops li a:hover{
+	background:#fff!important;
+	text-decoration: underline;
+	border-bottom: 0px solid ;
+}
+
+footer {
+	min-height: 150px;
+}
+footer li a {
+	color:#fff;
+	
+}
+
+footer li a:hover{
+	color:#ff6600;
+}
+
+footer .copy a:hover{
+	color:#ff6600;
+}
+
+footer .copy {
+	clear:both;
+	color:#fff;
+	padding-top:20px;
+	text-align:center;
+}
+
+footer .footnav  {
+	padding-left:140px;
+	
+}
+footer .footnav li {
+	padding: 10px;
+	display:block;
+	float:left;
+}
+
+.lead {margin-bottom: 10px;}
+
+.welcome {
+	text-align:center;
+	padding-top:300px;
+	background-image: url('');
+	width: 740px;
+	height: 500px;
+	border:4px solid #efefef;
+	margin-bottom:20px;
+}
+
+.welcome h1 {
+	
+}
+
+.leaders h4 {
+	margin-top:20px;
+}
+.learnmore {
+	color: #ff6600;
+}
+
+.learnmore a{
+	
+}
+
+.learnmore a{
+	
+}
+
+.curric li {
+	font-size: 1.3em;
+	list-style: disc;
+	padding-bottom: 10px;
+} 
+
+.smallform {
+	padding:10px 0 50px;
+}
+
+.breather {
+	padding-top:20px;
+}
+
+.prog {
+	width:580px;
+}
+.program-details {
+	font-size: 1.3em;
+}
+
+.reqs {
+	padding-top:0px;
+	font-size: .9em;
+}
+
+.body-img {
+	margin:15px 0 30px;
+}
+.more {
+	color:#ff6600;
+}
+.bio {
+	clear:both;
+	margin:40px 0 0px;
+	padding-bottom:10px;
+	
+	
+}
+.biopic {
+	width: 220px;
+	float:left;
+	padding:10px ;
+	
+}
+
+.biostory h3{
+	margin-top: 0px;
+	color:#0F3055;
+}
+.biostory h4{
+	color:#aaa;
+}
+.biostory {
+	
+	width: 515px;
+	float:left;
+	padding:10px;
+}
+
+.info {
+	font-size:1.6em;
+	color:#ff6600;
+	margin-top:8px;
+	padding-right:8px;
+	float:left;
+}
+
+.shop-item {
+	float:left;
+	height: 320px;
+	margin: 10px 12px 10px 0;
+	border:1px solid #eee;
+	width: 170px;
+	padding: 10px;
+	text-align: center;
+}
+
+.shop-item-img {
+	height:160px;
+}
+
+.shop-item-desc {
+	height:50px;
+	font-size: 1.1.em;
+	font-weight:bold;
+}
+
+.shop-item-item {
+	height:20px;
+	color:#777;
+	font-weight:300;
+}
+.shop-item-btn {
+	width:150px;
+}
+
+.shop-ad {
+	padding:20px;
+}
+
+.product-image {
+	text-align:center;
+}
+
+.pagination {
+	width:100%;
+	text-align:center;
+}
+
+.announcement img {
+	padding-bottom: 20px;
+}
+
+.partner {
+	padding-top:20px;
+	clear: both;
+	margin-bottom: 20px;
+}
+
+.partner img {
+	padding: 5px 10px 0px 0;
+	
+}
+.gallery-albums {
+	float:left;
+	text-align: center;
+	margin-top:20px;
+	width: 350px;
+	margin-right: 10px;
+	border: 1px solid #efefef;
+	height: 400px;
+}
+
+.album-bottom {
+	clear:both;
+	border-bottom:1px solid #efefef;
+	margin-bottom: 20px;
+}
+.album-pics {
+	background:#eee;
+	float:left;
+	width: 174px;
+	height:170px;
+	padding:10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.album-nav {
+	text-align:center;
+}
+
+.album-nav h4{
+	color:#999;
+}

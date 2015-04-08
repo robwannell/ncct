@@ -1,0 +1,14 @@
+<h1>The NCCT Team</h1>
+
+    <% @bios.each do |bio| %>
+	<div class="bio">
+    
+        <div class="biopic"><%= image_tag bio.avatar(:thumb) %> </div><div class="biostory"><h3> <%= bio.name %> </h3>
+       <h4><%= bio.position %></h4><%= simple_format(bio.story) %>
+        
+        <% if current_user %><p><span class="badge"><%= bio.rank %></span> <%= link_to 'Edit', edit_bio_path(bio) %> | <%= link_to 'Destroy', bio, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
+		<hr>
+	</div>
+</div>
+    
+    <% end %>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Programs</h1>
+
+<table class="table table-hover progs">
+  <thead>
+    <tr>
+      <th>Program</th><th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+		  <td class="prog"><%= program.title %>
+        <td><%= link_to 'Show', program %> | <%= link_to 'Edit', edit_program_path(program) %> |<%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= content_for :rh do %>
+
+<div class="well">
+<span class="glyphicon glyphicon-info-sign info"></span><h4>Program manager</h4>
+<p>Manage the programs and their enrollment procedures here</p>
+<%= link_to 'Add a new Program', new_program_path, class: 'btn btn-default'%>
+</div>
+<% end %>

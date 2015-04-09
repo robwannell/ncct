@@ -160,17 +160,18 @@ footer .footnav li {
 .lead {margin-bottom: 10px;}
 
 .welcome {
+	background-image: url("paint.jpg");
 	text-align:center;
-	padding-top:300px;
-	background-image: url('');
+	padding-top:200px;
+	
 	width: 740px;
-	height: 500px;
+	height: 385px;
 	border:4px solid #efefef;
 	margin-bottom:20px;
 }
 
 .welcome h1 {
-	
+	color:#fff;
 }
 
 .leaders h4 {

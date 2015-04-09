@@ -27,7 +27,7 @@
 <tbody>
  <% @programs.each do |program| %>
  
-<tr><td> <%= link_to program.title, program %> </td><td><%= program.city %></td><td> <%= program.staff1_title %> <%= program.staff1_firstname %> <%= program.staff1_lastname %></td><td><%= link_to 'more', program_path(program)%> <span class="glyphicon glyphicon-share-alt more"></span></td></tr>
+<tr><td> <%= link_to program.title, program %> </td><td><%= program.city %></td><td><%= program.staff1_firstname %> <%= program.staff1_lastname %></td><td><%= link_to 'more', program_path(program)%> <span class="glyphicon glyphicon-share-alt more"></span></td></tr>
 
 
  <% end %>

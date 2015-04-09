@@ -10,5 +10,5 @@ class Photo < ActiveRecord::Base
     validates :title, presence: true
     validates :avatar, presence: true
     
-    
+    validates_with AttachmentSizeValidator, :attributes => :avatar, :less_than => 1.megabytes
 end

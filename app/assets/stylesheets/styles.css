@@ -350,3 +350,13 @@ footer .footnav li {
 .album-nav h4{
 	color:#999;
 }
+
+.facebook {
+	width: 500px;
+	margin:0px auto;
+	text-align:center;
+}
+
+.facebook a {
+	color:#fff;
+}

@@ -12,5 +12,5 @@ class Announcement < ActiveRecord::Base
     extend FriendlyId
     friendly_id :title, use: :slugged
     
-    
+     default_scope  {order 'created_at DESC'}
 end

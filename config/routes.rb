@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
 
+  resources :graduates
+
   resources :photos
   match 'set_cover', to: 'albums#set_cover', via: 'get'
   resources :albums

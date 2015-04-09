@@ -360,3 +360,22 @@ footer .footnav li {
 .facebook a {
 	color:#fff;
 }
+
+.counter { 
+	width: 200px;
+	height: 80px;
+	font-size: 2.5em;
+}
+	
+.grad-counter {
+			font-size: 3.5em;
+			background-color: #eee;
+			color: #ff6600;
+			display: block;
+			border:2px solid #ccc;
+			width: 250px;
+			text-align: center;
+			padding: 10px;
+			margin: 20px 0;
+			letter-spacing: 0.3em;
+	}

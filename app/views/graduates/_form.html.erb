@@ -1,0 +1,23 @@
+<div class="smallform">
+	
+	<%= bootstrap_form_for(@graduate) do |f| %>
+  <% if @graduate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@graduate.errors.count, "error") %> prohibited this graduate from being saved:</h2>
+
+      <ul>
+      <% @graduate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div class="field">
+		<%= f.number_field :counter, class: "counter" %>
+	</div>
+  <div class="actions">
+    <%= f.submit :set, class: "col-md-offset-2 btn btn-default" %>
+  </div>
+<% end %>
+
+</div>

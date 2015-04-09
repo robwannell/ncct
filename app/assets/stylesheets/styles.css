@@ -324,6 +324,9 @@ footer .footnav li {
 	padding:10px;
 }
 
+.gallery-albums img {
+	margin-bottom:15px;
+}
 .album-bottom {
 	clear:both;
 	border-bottom:1px solid #efefef;

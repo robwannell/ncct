@@ -16,6 +16,6 @@
 		 
 		  <li class="<%= 'active' if current_page?(announcements_path) %>"><%= link_to "News/Events", announcements_path %></li>
 		  <li class="<%= 'active' if current_page?(partners_path) %>"><%= link_to "Partnerships", partners_path %></li>
-		  <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+		  <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path, 'data-no-turbolink' => true  %></li>
 		 
           

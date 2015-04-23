@@ -4,7 +4,7 @@
 
 <h3>Price: $<%= @product.price %></h3>
 
-<h5>Item#<%= @product.item %></h5>
+<h5>Item#<%= @product.item %> <% if current_user %><%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>   <% end %></h5>
 
 <div class="product-image"><%= image_tag @product.avatar.url(:medium)%></div>
 
@@ -30,7 +30,7 @@
 
 	<p>Non-Profit: <strong>Tax ID 68-0360766</strong></p>
 
-	<p style="color:red;">[ORDER FORM HERE]</p>
+	<p><%= link_to 'Download an Order Form here', '/downloads/ncct_order_form.pdf', target: "_blank" %></p>
 	
 </div>
 <% end %>

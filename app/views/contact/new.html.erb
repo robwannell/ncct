@@ -31,7 +31,7 @@ function loadMap() {
 	map = new GMap2(document.getElementById("map"));
 	map.addControl(new GLargeMapControl());
 	map.addControl(new GMapTypeControl());
-	map.setCenter(new GLatLng( 38.564810956372185, -121.49711608886719), 11);
+	map.setCenter(new GLatLng( 38.304810956372185, -121.49711608886719), 9);
 	map.setMapType(G_NORMAL_MAP);
 
 	icon0 = new GIcon();
@@ -46,7 +46,15 @@ function addPoints() {
 
 	newpoints[0] = new Array(38.524919, -121.389592, icon0, 'NCCT Sacramento', '9516 Fruitridge Road, Sacramento CA 95826'); 
 	newpoints[1] = new Array(38.598468, -121.534785, icon0, 'NCCT West Sacramento', '1290 Carrie Street West Sacramento, CA 95605'); 
-
+	newpoints[2] = new Array(38.6683086, -121.7633022, icon0, 'NCCT', '1250 E. Gum Avenue Woodland CA 95776');
+	newpoints[3] = new Array(38.5596861, -121.3142125, icon0, 'NCCT', '10170 Missile Way Mather, CA 95655');
+	newpoints[4] = new Array(38.5446187, -121.3393338, icon0, 'NCCT', '9601 Kiefer Blvd Sacramento, CA 95827');
+	newpoints[5] = new Array(37.5017919, -120.8582462, icon0, 'NCCT', '900 North Broadway Bldg. E3 Turlock, CA 95380');
+	newpoints[6] = new Array(38.6031, -121.4196886, icon0, 'NCCT', '2040 Ethan Way Sacramento, CA 95825');
+	newpoints[7] = new Array(38.659802, -121.731314, icon0, 'NCCT', '2420 E. Gibson Road Woodland, CA 95776');
+	newpoints[8] = new Array(38.7593834, -121.2976629, icon0, 'NCCT', '200 Corporation Yard Roseville, CA 95678');
+	newpoints[9] = new Array(37.9376489, -121.262887, icon0, 'NCCT', '1658 South Airport Way Stockton, CA 95206');
+	
 	for(var i = 0; i < newpoints.length; i++) {
 		var point = new GPoint(newpoints[i][1],newpoints[i][0]);
 		var popuphtml = newpoints[i][4] ;
@@ -97,7 +105,7 @@ function createMarker(point, icon, popuphtml) {
 		<% end %>
 </div>
 <h2>NCCT Locations</h2>
- <div id="map" style="width: 730px; height: 400px; margin:auto; margin-top:20px;padding:30px 5px"></div>
+ <div id="map" style="width: 730px; height: 900px; margin:auto; margin-top:20px;padding:30px 5px"></div>
 
 <% content_for :rh do %>
 <div class="well">

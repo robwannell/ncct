@@ -1,5 +1,7 @@
 body {
 	background-color: #0F3055;
+	
+	
 }
 
 p {
@@ -36,7 +38,7 @@ p {
 }
 
 .pagecontainer {
-	padding: 20px 0;
+	padding: 120px 0;
 	
 }
 
@@ -50,10 +52,7 @@ p {
 	
 }
 
-.headerbg {
-	background-image: url("bg.png");
-	height:131px;
-}
+
 
 .adminlogin {
 	padding-top:50px;
@@ -64,44 +63,46 @@ p {
 }
 
 .logodiv {
-	background-image: url("logo.png");
+	padding-bottom:20px;
 	image-repeat: none;
-	height:131px;
+	
 } 
-
-.navbg .navbar-inverse{ 
+.navbar {
+	background-color: #0F3055;
+	border-bottom: 5px solid #3FA9F5;
+}
+.nav{
+	background-color: #0F3055;
 	
-	background-color:#777;
-	height: 50px;
-	border:0;
-	border-radius: 0 !important;
-	border-bottom: #3FA9F5 solid 6px;
-	margin-bottom:0;
+	padding-top:60px;
 }
 
 
-.nav {
-	margin-top:-1px;
-	border-bottom: #3FA9F5 solid 5px;
-	height: 50px;
-}
 
-.nav  a { 
-	height: 50px;
-	
+.navbar-nav > li > a {
+	background-color: transparent;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 50px;
+	font-size: 1em;
 	text-transform: uppercase;
-	
+	color: #fff;
 }
 
-
- .nav .active a { color: #fff; background:#3FA9F5!important;
+.nav .active a { color: #fff; background:#3FA9F5!important;
 }
 
 .nav a:hover { color: #fff; background:#FF6600!important;
-	border-bottom: 5px solid #3FA9F5;
+	
 	
 	
 }
+
+.navbar-fixed-top {
+    min-height: 80px;
+	
+}
+
 .navbar .nav > li.dropdown.open.active > a:hover, 
 .navbar .nav > li.dropdown.open > a
 {
@@ -118,7 +119,7 @@ p {
 
 .dropdown-menu li.dropdown.active.open {
 	color:red;
-	height:50px;
+	height:80px;
 }
 .drops li a{
 	color:#333;

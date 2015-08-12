@@ -8,6 +8,10 @@ p {
 	font-size: 1.1em;
 }
 
+.alert {
+	background-color: #fbfbfb;
+	margin-top: 150px;
+}
 .rh img{
 	border:1px solid #efefef;
 	text-align: center;
@@ -38,7 +42,7 @@ p {
 }
 
 .pagecontainer {
-	padding: 120px 0;
+	margin: 110px 0;
 	
 }
 

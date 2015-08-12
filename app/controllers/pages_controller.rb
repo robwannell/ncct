@@ -22,4 +22,8 @@ class PagesController < ApplicationController
   def gallery
       @albums = Album.all
     end
+    
+    def board
+      @bm = Boardmember.all
+    end
 end

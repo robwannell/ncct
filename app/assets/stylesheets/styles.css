@@ -69,26 +69,33 @@ p {
 	height:131px;
 } 
 
-.navbg {
+.navbg .navbar-inverse{ a
+	
 	background-color:#777;
 	height: 50px;
-	border-bottom: #3FA9F5 solid 5px;
+	border:0;
+	border-radius: 0 !important;
+	border-bottom: #3FA9F5 solid 6px;
+	margin-bottom:0;
+	color:red;
 }
+
+
 .nav {
 	margin-top:-1px;
-	background-color:#777;
 	border-bottom: #3FA9F5 solid 5px;
 	height: 50px;
 }
 
 .nav  a { 
 	height: 50px;
-	color: #fff;
 	
-	text-transform: uppercase;color: #fff;
+	text-transform: uppercase;
 	
 }
-.nav .active a { color: #fff; background:#3FA9F5!important;
+
+
+ .nav .active a { color: #fff; background:#3FA9F5!important;
 }
 
 .nav a:hover { color: #fff; background:#FF6600!important;
@@ -103,6 +110,7 @@ p {
    background-color: #ff6600;
    border-color: #fff;
 }
+
 
 .dropdown-menu li{
 	background-color:#fff;
@@ -123,7 +131,6 @@ p {
 	text-decoration: underline;
 	border-bottom: 0px solid ;
 }
-
 
 
 footer {
@@ -381,3 +388,5 @@ footer .footnav li {
 			margin: 20px 0;
 			letter-spacing: 0.3em;
 	}
+	
+	

@@ -1,0 +1,31 @@
+<h1>Boardmembers</h1>
+
+
+    <% @boardmembers.each do |boardmember| %>
+	<div class="bio">
+    
+        <div class="biopic"><%= image_tag boardmember.avatar(:thumb) %> </div><div class="biostory"><h3> <%= boardmember.name %> </h3>
+       <h4><%= boardmember.title %></h4><%= simple_format(boardmember.body) %>
+        
+        <% if current_user %><p><span class="badge"><%= boardmember.rank %> </span> <%= link_to 'Edit', edit_boardmember_path(boardmember) %> | <%= link_to 'Destroy', boardmember, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
+		<hr>
+	</div>
+</div>
+    
+    <% end %>
+ 
+
+<% content_for :rh do %>
+
+<div class="well tips">
+<span class="glyphicon glyphicon-info-sign info"></span><h4>Ranking system</h4>
+<p>Ranking the boardmember sets the order in which the team members are displayed, otherwise they would be listed alphabetically. Zero is the highest rank.
+	
+<p>Spread the ranks out so there is room to insert new members/positions. For example, instead of 1, 2, 3... use 10, 20, 30... so you can add 12 at a later date if you need to.</p>
+
+<p><%= link_to 'Add a new Boardmember', new_boardmember_path, class: "btn btn-default" %>
+
+</div>
+<% end %>
+
+

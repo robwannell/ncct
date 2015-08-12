@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
 
+  resources :boardmembers
+
   resources :graduates
 
   resources :photos
@@ -44,6 +46,8 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   
   get '/team' => 'pages#team'
+  
+   get '/board' => 'pages#board'
 
   get '/careers' => 'pages#careers'
 

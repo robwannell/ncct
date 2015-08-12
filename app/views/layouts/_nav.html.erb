@@ -5,16 +5,17 @@
 		            <li class="<%= 'active' if current_page?(careers_path) %>"><%= link_to "About Us", about_path %></li>
 					 <li ><%= link_to "Success Stories", success_path %></li>
 		            <li><%= link_to "Meet the Team", team_path %></li>
+					 <li><%= link_to "Board of Directors", board_path %></li>
 		            <li ><%= link_to "Gallery", gallery_path %></li>
 					
 		          </ul>
 		        </li>
-		  <li class="<%= 'active' if current_page?(careers_path) %>"> <%= link_to "Careers", careers_path %></li>
+		  <li class="<%= 'active' if current_page?(careers_path) %> hidden-md hidden-sm"> <%= link_to "Careers", careers_path %></li>
 		  <li class="<%= 'active' if current_page?(curriculum_path) %>"><%= link_to "Curriculum", curriculum_path %></li>
 		  <li class="<%= 'active' if current_page?(enrollment_path) or params[:controller] == "programs" %>"><%= link_to "Enrollment", enrollment_path %></li>
-		  <li class="<%= 'active' if current_page?(products_path) %>"><%= link_to "Purchase Products", products_path %></li>
+		  <li class="<%= 'active' if current_page?(products_path) %> hidden-md hidden-sm" ><%= link_to "Purchase Products", products_path %></li>
 		 
-		  <li class="<%= 'active' if current_page?(announcements_path) %>"><%= link_to "News/Events", announcements_path %></li>
+		  <li class="<%= 'active' if current_page?(announcements_path) %> hidden-md hidden-sm"><%= link_to "News/Events", announcements_path %></li>
 		  <li class="<%= 'active' if current_page?(partners_path) %>"><%= link_to "Partnerships", partners_path %></li>
 		  <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path, 'data-no-turbolink' => true  %></li>
 		 

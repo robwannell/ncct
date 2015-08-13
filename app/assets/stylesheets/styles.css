@@ -10,7 +10,7 @@ p {
 
 .alert {
 	background-color: #fbfbfb;
-	margin-top: 150px;
+	margin-top: 20px;
 }
 .rh img{
 	border:1px solid #efefef;
@@ -42,7 +42,7 @@ p {
 }
 
 .pagecontainer {
-	margin: 110px 0;
+	margin: 110px 0 0;
 	
 }
 

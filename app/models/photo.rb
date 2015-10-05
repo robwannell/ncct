@@ -5,9 +5,9 @@ class Photo < ActiveRecord::Base
     # Validate content type
     validates_attachment_content_type :avatar, :content_type => /\Aimage/
     # Validate filename
-    validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/]
+    validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/, /JPEG/, /JPG/]
     
-    validates :title, presence: true
+   
     validates :avatar, presence: true
     
     validates_with AttachmentSizeValidator, :attributes => :avatar, :less_than => 1.megabytes

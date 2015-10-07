@@ -1,4 +1,4 @@
-<div><h1>NCCT Products for sale</h1>
+<h1>NCCT Products for sale</h1>
 
 
 <p>Display products by 
@@ -19,16 +19,16 @@
 
 
     <% @products.each do |product| %>
-     <div class="shop-item">
+     <div class="shop-item col-sm-3">
 	 <div class="shop-item-img"> <%= image_tag product.avatar.url(:thumb) %></div>
 	  <div class="shop-item-desc"> <%= product.name %> </div>
 	 <div class="shop-item-item">item#<%= product.item %></div>
 	  <h5>$<%= product.price %></h5>
 	  <p><%= link_to 'More Info', product, class: "btn btn-primary shop-item-btn" %>
 	 </div>
-    
+      
     <% end %>
- </div>  
+ 
  
 <% content_for :rh do %>
 

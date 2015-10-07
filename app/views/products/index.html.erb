@@ -1,4 +1,4 @@
-<h1>NCCT Products for sale</h1>
+<div><h1>NCCT Products for sale</h1>
 
 
 <p>Display products by 
@@ -24,9 +24,8 @@
 	  <div class="shop-item-desc"> <%= product.name %> </div>
 	 <div class="shop-item-item">item#<%= product.item %></div>
 	  <h5>$<%= product.price %></h5>
-	  <p><%= link_to 'More Info', product, class: "btn btn-primary shop-item-btn" %>
-	 </div>
-      
+	  <p><%= link_to 'More Info', product, class: "btn btn-primary shop-item-btn" %></p>
+	 </div>      
     <% end %>
  
  

@@ -1,6 +1,6 @@
 class BoardmembersController < ApplicationController
-  before_action :set_boardmember, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login
+  before_action :set_boardmember, only: [:edit, :update, :destroy]
+  before_filter :require_login, :except => :show
   # GET /boardmembers
   # GET /boardmembers.json
   def index
@@ -10,6 +10,7 @@ class BoardmembersController < ApplicationController
   # GET /boardmembers/1
   # GET /boardmembers/1.json
   def show
+    @boardmember = Boardmember.find(params[:id])
   end
 
   # GET /boardmembers/new

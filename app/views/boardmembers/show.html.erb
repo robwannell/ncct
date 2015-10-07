@@ -1,24 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @boardmember.name %>
+<h2><%= @boardmember.name %></h2>
+  
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @boardmember.title %>
+<p><h4><%= @boardmember.title %></h4>
+  
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @boardmember.body %>
+<div class="biopic"><%= image_tag @boardmember.avatar(:thumb) %> </div><div class="biostory"><%= simple_format (@boardmember.body) %></div>
 </p>
 
-<p>
-  <strong>Rank:</strong>
-  <%= @boardmember.rank %>
-</p>
 
-<%= link_to 'Edit', edit_boardmember_path(@boardmember) %> |
-<%= link_to 'Back', boardmembers_path %>
+
+ <% if current_user %><p><span class="badge"><%= @boardmember.rank %> </span> <%= link_to 'Edit', edit_boardmember_path(@boardmember) %> | <%= link_to 'Destroy', @boardmember, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
+
+<% content_for :rh do %>
+<p><%= link_to 'Back to Boardmembers', board_path, class: "btn btn-default" %>
+
+
+<% end %>

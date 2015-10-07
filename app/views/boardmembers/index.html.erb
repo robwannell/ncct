@@ -5,7 +5,12 @@
 	<div class="bio">
     
         <div class="biopic"><%= image_tag boardmember.avatar(:thumb) %> </div><div class="biostory"><h3> <%= boardmember.name %> </h3>
-       <h4><%= boardmember.title %></h4><%= simple_format(boardmember.body) %>
+       <h4><%= boardmember.title %></h4><%= truncate(boardmember.body, 
+  length: 250, 
+  separator: ' ', 
+  omission: '... ') {     
+    link_to "read more", boardmember 
+} %>
         
         <% if current_user %><p><span class="badge"><%= boardmember.rank %> </span> <%= link_to 'Edit', edit_boardmember_path(boardmember) %> | <%= link_to 'Destroy', boardmember, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
 		<hr>

@@ -6,12 +6,9 @@
 	<div class="newsitem">
     <h2><%= link_to announcement.title, announcement %></h2>
 	<h5><%= announcement.created_at.strftime("%B %d %Y")%> <% if current_user %><%= link_to 'Edit', edit_announcement_path(announcement) %> | <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></h5>
-	<%= truncate(announcement.body, 
-  length: 250, 
-  separator: ' ', 
-  omission: '... ') {     
+	<%= truncate(strip_tags(announcement.body), :length => 200, :escape => false )%> <%=     
     link_to "read more", announcement 
-} %>
+ %>
         </div>
     
     <% end %>

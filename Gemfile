@@ -9,6 +9,7 @@ gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rbenv'
 gem 'therubyracer', :platforms => :ruby
 
+gem 'ckeditor'
 
 
 gem 'sorcery'

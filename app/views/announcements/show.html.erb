@@ -1,7 +1,7 @@
 <div class="announcement">
 	
 	<h1><%= @announcement.title %></h1>
-
+<p class="right"><% if current_user %><%= link_to 'Edit this Story', edit_announcement_path(@announcement) %><% end %></p>
 <% if @announcement.avatar_file_name %>
 <%= image_tag @announcement.avatar.url(:medium)%>
 <% end %>

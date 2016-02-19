@@ -15,7 +15,7 @@
         <h4><%= raffle.date.strftime("%A %B %d %Y - %l:%M %p") %></h4>
 		
   	  <% if raffle.avatar_file_name %>
-  	 <div class="raffle-img"> <%= image_tag raffle.avatar.url(:medium)%></div>
+  	 <div class="raffle-img"> <%= image_tag raffle.avatar.url(:medium), class: "img-fluid" %></div>
   	  <% end %>
 	  
         <div class="raffle-description"><%= simple_format(raffle.description) %></div>

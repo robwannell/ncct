@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
   
 
+  resources :raffleitems
+
+  resources :raffle
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :boardmembers
 

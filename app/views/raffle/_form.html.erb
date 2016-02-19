@@ -1,0 +1,53 @@
+<%= bootstrap_form_for(@raffle) do |f| %>
+  <% if @raffle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raffle.errors.count, "error") %> prohibited this raffle from being saved:</h2>
+
+      <ul>
+      <% @raffle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+  
+    <%= f.text_field :name %>
+  </div>
+<div class="field">
+    
+    <%= f.radio_button :display, true, label: "Display on Welcome Page" %>
+   
+    <%= f.radio_button :display, false, label: "Don't Display on Welcome Page"%>
+  </div>
+  
+  
+ 
+	
+
+ 
+  <div class="field">
+   
+    <%= f.datetime_select :date %>
+  </div>
+  
+    <div class="field">
+    <% unless @raffle.avatar.blank? %>
+    <p><b>Current image</b><br/><%= link_to (image_tag @raffle.avatar.url(:thumb)), @raffle.avatar.url(:medium), target: '_blank' %> </p><%= f.file_field :avatar, label: 'Add a new image'%></p>
+    <% else %>
+    <%= f.file_field :avatar, label: 'Add an image'%>
+    <% end %>
+  </div>
+  
+  
+  <div class="field">
+    
+    <%= f.text_area :description, class: "desc" %>
+  </div>
+  <div class="actions pull-right">
+    <%= f.submit %>
+  </div>
+<% end %>
+<div class="clear"></div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @raffleitem.name %>
+</p>
+
+<p>
+  <strong>Ticket:</strong>
+  <%= @raffleitem.ticket %>
+</p>
+
+<p>
+  <strong>Raffle:</strong>
+  <%= @raffleitem.raffle %>
+</p>
+
+<%= link_to 'Edit', edit_raffleitem_path(@raffleitem) %> |
+<%= link_to 'Back', raffleitems_path %>

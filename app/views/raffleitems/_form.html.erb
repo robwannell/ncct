@@ -1,0 +1,39 @@
+<%= bootstrap_form_for(@raffleitem) do |f| %>
+  <% if @raffleitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raffleitem.errors.count, "error") %> prohibited this raffleitem from being saved:</h2>
+
+      <ul>
+      <% @raffleitem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+    <div class="field">
+   
+      <%= f.text_field :itemnumber %>
+    </div>
+	
+  <div class="field">
+   
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+   
+    <%= f.number_field :ticket %>
+  </div>
+  <div class="field">
+    
+    <% if @raffle_id %>
+     <%= f.select(:raffle_id, Raffle.all.collect {|p| [ p.name, p.id ] }, :selected => @raffle_id) %>
+     <% else %>
+     <%= f.select(:raffle_id, Raffle.all.collect {|p| [ p.name, p.id ] }) %>
+   <% end %>
+  </div>
+  <div class="actions pull-right">
+    <%= f.submit %>
+  </div>
+  <div class="clear"></div>
+<% end %>

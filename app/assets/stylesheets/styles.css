@@ -303,6 +303,10 @@ footer .footnav li {
 	padding:20px;
 }
 
+.shop-ad  {
+	margin-top:0;
+	padding-top:10px;
+}
 .product-image {
 	text-align:center;
 }
@@ -393,8 +397,32 @@ footer .footnav li {
 			letter-spacing: 0.3em;
 	}
 	
-	.right {
+.right {
 		text-align:right;
 		padding-right:20px;
 	}
+	.clear {
+		clear:both;
+	}
 	
+	.raffleitem-cell {
+		width:55%;
+	}
+	.raffleticket-cell {
+		width:25%;
+	}
+	
+	.desc {
+		min-height:300px;
+	}
+	
+	.raffle-img {
+		padding:20px 0;
+		width:100%;
+		margin:0px auto;
+		text-align:center;
+	}
+	
+	.raffle-description {
+		padding:20px 0;
+	}

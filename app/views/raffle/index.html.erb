@@ -1,0 +1,61 @@
+
+
+
+    <% @raffle.each do |raffle| %>
+      <h1><%= raffle.name %></h1>
+	 
+	  
+		<% if current_user %>
+		
+		<%= link_to 'Add Raffle Items', new_raffleitem_path, class: 'btn btn-default' %>
+       <%= link_to 'Edit Raffle Info', edit_raffle_path(raffle), class: 'btn btn-default' %>
+        <%= link_to 'Destroy this Raffle', raffle, method: :delete, data: { confirm: 'Are you sure you want to DELETE this Raffle' }, class: 'btn btn-default' %>
+      <% end %>
+	  
+        <h4><%= raffle.date.strftime("%A %B %d %Y - %l:%M %p") %></h4>
+		
+  	  <% if raffle.avatar_file_name %>
+  	 <div class="raffle-img"> <%= image_tag raffle.avatar.url(:medium)%></div>
+  	  <% end %>
+	  
+        <div class="raffle-description"><%= simple_format(raffle.description) %></div>
+		<div>
+			<table class="table table-hover">
+				<tr><th>#</th><th>Raffle Item</th><th>Winning Ticket #</th><% if current_user %><th>Action</th><% end %>
+			<% @raffleitems =  Raffleitem.where(:raffle_id => raffle) %>
+			    <% @raffleitems.each do |r| %>
+			        <tr><td><%=	 r.itemnumber %></td><td class="raffleitem-cell"><%= r.name %></td><td class="raffleticket-cell"><strong><%= r.ticket %></strong></td> <% if current_user %><td><%= link_to 'Edit', edit_raffleitem_path(r) %> | <%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %></tr>
+			    <% end %>
+			</table>
+			</div>
+        
+		
+    <% end %>
+ 
+<br>
+
+
+
+<% content_for :rh do %>
+<% unless current_user %>
+<%= render "/layouts/shop_ad.html.erb" %>
+<% end %>
+<% if current_user %>
+
+<h3>Manage Raffles</h3>
+<p>Add a Raffle, and the Raffle Items here.
+	
+	<p>When the numbers have been drawn, simply edit each <strong>Raffle Item</strong> and update the <strong>Winning Ticket #</strong></p>
+
+<p>Display (or don't) a Raffle on the Welcome page by selecting <strong>Display</strong> when you create or edit a Raffle.</p>
+	
+<div class="well">
+
+
+<%= link_to 'Add a New Raffle', new_raffle_path, class: 'btn btn-default'%>
+</div>
+
+
+<% end %>
+<% end %>
+

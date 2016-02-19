@@ -142,6 +142,9 @@ NCCT works closely with other organizations and partners to make sure you have a
 <% content_for :rh do %>
 
 
+<% if @news %>
+<%= render "/layouts/news.html.erb" %>
+<% end %>
 
 <div class="leaders well">
 	
@@ -162,9 +165,7 @@ NCCT works closely with other organizations and partners to make sure you have a
 
 </div>
 
-<% if @news %>
-<%= render "/layouts/news.html.erb" %>
-<% end %>
+
 <%= render "/layouts/shop_ad.html.erb" %>
 <% if @grads %>
 <%= render "/layouts/graduates.html.erb" %>

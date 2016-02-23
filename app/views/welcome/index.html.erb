@@ -146,6 +146,16 @@ NCCT works closely with other organizations and partners to make sure you have a
 <%= render "/layouts/news.html.erb" %>
 <% end %>
 
+<% if @raffle %>
+<div class="raffle-welcome">
+	<h2>Take Part in our Raffle!</h2>
+ 	  <% if @raffle.avatar_file_name %>
+ 	 <%= image_tag @raffle.avatar.url(:thumb), style: "height:auto; max-width:100%" %>
+ 	  <% end %>
+	  <h3><%= link_to 'Find out more here ', raffle_index_path %><span class="glyphicon glyphicon-share-alt"></span></span></h3>
+	  </div>
+<% end %>
+
 <div class="leaders well">
 	
 <h4>We have an 85% record of success over 12 years<br/>

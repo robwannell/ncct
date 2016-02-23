@@ -426,3 +426,11 @@ footer .footnav li {
 	.raffle-description {
 		padding:20px 0;
 	}
+	
+	.raffle-welcome {
+		text-align:center;
+		color:#ff6600;
+		border:1px solid #eee;
+		padding:10px;
+		margin: 20px 0;
+	}

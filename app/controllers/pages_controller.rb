@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def success
+    @success_stories = SuccessStory.all
   end
   
   def enrollment

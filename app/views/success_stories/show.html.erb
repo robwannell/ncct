@@ -1,0 +1,20 @@
+        <h2><%= @success_story.name %></h3>
+			 <h4><%= @success_story.title %></h4>
+ 			<% if current_user %>
+ 			<span class="badge"><%= @success_story.ranking %> </span> <%= link_to 'Edit', edit_success_story_path(@success_story) %> | <%= link_to 'Destroy', @success_story, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+ 			<% end %>
+			 <div class="success-pic">
+				<% if @success_story.avatar_file_name %>
+				<%= image_tag @success_story.avatar.url(:medium), class: "img-responsive"%>
+				<% end %>
+			</div>
+			
+       
+        <p><%= simple_format(@success_story.content) %>
+
+
+
+
+
+<%= link_to 'Back to NCCT Success', success_path %> <% if current_user %>| <%= link_to 'Back to Admin for Stories', success_stories_path %><% end %>

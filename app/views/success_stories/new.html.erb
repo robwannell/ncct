@@ -1,0 +1,20 @@
+<h1>New Success Story</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', success_stories_path %>
+
+
+
+<%= content_for :rh do %>
+
+<div class="well tips">
+<span class="glyphicon glyphicon-info-sign info"></span><h4>Ranking system</h4>
+<p>Ranking the entry sets the order in which the stories are displayed, otherwise they would be listed alphabetically. Zero is the highest rank.
+	
+<p>Spread the ranks out so there is room to insert new members/positions. For example, instead of 1, 2, 3... use 10, 20, 30... so you can add 12 at a later date if you need to.</p>
+
+
+
+</div>
+<% end %>

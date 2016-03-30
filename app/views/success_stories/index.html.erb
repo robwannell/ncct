@@ -1,0 +1,27 @@
+
+
+<h1>Success Stories</h1>
+
+    <% @success_stories.each do |success_story| %>
+	<div class="bio">
+    
+        <div class="biopic"><%= image_tag success_story.avatar(:thumb), class: "img-responsive" %> </div><div class="biostory">
+        <h3><%= success_story.name %></h3>
+        <h4><%= success_story.title %></h4>
+        <p><%= truncate(success_story.content, 
+  length: 250, 
+  separator: ' ', 
+  omission: '... ') {     
+    link_to "read more", success_story
+} %>
+        
+        <p><span class="badge"><%= success_story.ranking %> </span> <%= link_to 'Show', success_story %> | <%= link_to 'Edit', edit_success_story_path(success_story) %> | <%= link_to 'Destroy', success_story, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+     </div>
+ </div>
+    <% end %>
+  
+<br>
+
+<% content_for :rh do %>
+<%= link_to 'New Success story', new_success_story_path, class: "btn btn-default" %>
+<% end %>

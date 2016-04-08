@@ -22,6 +22,7 @@
 <p><%= truncate(strip_tags(announce.body), 
   length: 80, 
   separator: ' ', 
+  escape: false,
   omission: '... ') {     
     link_to "read more", announce 
 } %></p>

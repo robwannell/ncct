@@ -19,7 +19,7 @@
 <% @announcements.each do |announce| %>
 <% unless announce == @announcement %>
 <h3><%= announce.title %></h3>
-<p><%= truncate(announce.body, 
+<p><%= truncate(strip_tags(announce.body), 
   length: 80, 
   separator: ' ', 
   omission: '... ') {     
@@ -32,3 +32,5 @@
 
 
 <% end %>
+
+

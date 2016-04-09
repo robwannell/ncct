@@ -10,7 +10,7 @@ before_filter :require_login, except: [:show, :index]
   # GET /announcements/1
   # GET /announcements/1.json
   def show
-    @announcements = Announcement.all
+    @announcements = Announcement.first(8)
   end
 
   # GET /announcements/new

@@ -13,8 +13,8 @@
        
 	 <div class="col-md-12 ">
 		<% folder.albums.each do |a| %>
-		 <div class="col-md-4">
-		<% @cover = Photo.where('album_id = ?', a).first %><% unless @cover.blank? %><%= link_to (image_tag @cover.avatar.url(:thumb), class: "img-responsive"), a %><% end %>
+		 <div class="col-md-4 album-cover-mini">
+		<% @cover = Photo.where('album_id = ?', a).first %><% unless @cover.blank? %><%= link_to (image_tag @cover.avatar.url(:thumb), class: "img-responsive "), a %><% end %>
 	</div>
 		<% end %>
 	 </div>

@@ -356,6 +356,9 @@ footer .footnav li {
 	text-align: left;
 }
 
+.album-info {
+	min-height:400px;
+}
 .album-title {
 	min-height:20px;
 }
@@ -372,6 +375,13 @@ footer .footnav li {
 	min-height: 220px;
 	padding:10px;
 }
+.album-cover-mini {
+	
+	min-height:100px;
+	padding:10px;
+}
+
+
 
 .album-description {
 	padding:10px;

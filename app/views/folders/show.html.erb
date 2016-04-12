@@ -7,7 +7,7 @@
 
  <div class="col-md-12 ">
 	<% @folder.albums.each do |album| %>
-	 <div class="col-md-6">
+	 <div class="col-md-6 album-info">
 	    <div class="album-title"> <h3><%= link_to album.title, album %> </h3></div>
 	 <div class="album-cover-small"> <% @cover = Photo.where('album_id = ?', album).first %><% unless @cover.blank? %><%= link_to (image_tag @cover.avatar.url(:medium), class: "img-responsive"), album %><% end %></div>
 	<div class="album-description"><p><%= album.description %></p>

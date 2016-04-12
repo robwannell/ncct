@@ -28,7 +28,7 @@ before_filter :require_login, except: [:show]
 
     respond_to do |format|
       if @folder.save
-        format.html { redirect_to folders_url, notice: 'Folder was successfully created.' }
+        format.html { redirect_to gallery_url, notice: 'Folder was successfully created.' }
         format.json { render :show, status: :created, location: @folder }
       else
         format.html { render :new }

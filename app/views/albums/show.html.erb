@@ -16,7 +16,7 @@
 </div>
 
 <div class="album-bottom"></div>
-<%= link_to 'Back', gallery_path %>
+<%= link_to 'Back to folder', folder_path(@album.folder_id) %> | <%= link_to 'Back to all folders', gallery_path %>
 
 <% content_for :rh do %>
 
@@ -28,7 +28,7 @@
 <% if current_user %>
 <h4>Admin options</h4>
 <p><%= link_to 'Add a New Photo to this album', new_photo_path(:album_id => @album.id), class: "btn btn-default" %>
-	<p><% if current_user %><small><%= link_to 'Edit the Album name', edit_album_path(@album), class: "btn btn-default" %>  <%= link_to 'Destroy Album', @album, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></small><% end %>
+	<p><% if current_user %><small><%= link_to 'Edit the Album details', edit_album_path(@album), class: "btn btn-default" %>  <%= link_to 'Destroy Album', @album, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></small><% end %>
 <% end %>
 
 </div>

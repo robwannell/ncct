@@ -17,6 +17,12 @@
     <%= f.text_field :title %>
   </div>
   
+   <% if @folder_id %>
+    <%= f.select(:folder_id, Folder.all.collect {|p| [ p.title, p.id ] }, :selected => @folder_id) %>
+    <% else %>
+    <%= f.select(:folder_id, Folder.all.collect {|p| [ p.title, p.id ] }) %>
+  <% end %>
+  
   <div class="field">
   
     <%= f.text_area :description, rows: "5", placeholder: "Add a short description for this album" %>

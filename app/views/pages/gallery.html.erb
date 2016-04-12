@@ -1,14 +1,26 @@
-<h1>Gallery</h1>
-    <% @albums.each do |album| %>
-      <div class="gallery-albums">
-        <h3><%= link_to album.title, album %> </h3>
-     <% @cover = Photo.where('album_id = ?', album).first %><% if @cover %><%= link_to (image_tag @cover.avatar.url(:medium)), album %>
-	 <p><%= album.description %></p>
-	<% end %>
-	  </div>
-	 
-    <% end %>
- 
+
+
+<% @folders.each do |folder| %>
+<div class="row">
+<div class="col-md-12 folders">
+<div class="col-md-6 folder-cover">
+
+<%= link_to (image_tag folder.avatar.url(:medium), class: "img-responsive") %>
+<p>Contains <%= folder.albums.count %> albums - <%= link_to 'View folder', folder %>
+	
+</div><div class="col-md-6 album-description"><h2><%= folder.title %></h2><p><%= folder.description %></p>
+	<p><%= link_to 'View albums in this folder', folder %></p>
+       
+	 <div class="col-md-12 ">
+		<% folder.albums.each do |a| %>
+		 <div class="col-md-4">
+		<% @cover = Photo.where('album_id = ?', a).first %><% unless @cover.blank? %><%= link_to (image_tag @cover.avatar.url(:thumb), class: "img-responsive"), a %><% end %>
+	</div>
+		<% end %>
+	 </div>
+</div>
+</div></div>
+<% end %> 
 
 
 
@@ -20,9 +32,10 @@
 
 
 <div class="well">
-<span class="glyphicon glyphicon-info-sign info"></span><h4>Add a new Album</h4>
+<span class="glyphicon glyphicon-info-sign info"></span><h4>Manage Albums</h4>
 
-<%= link_to 'New Album', new_album_path, class: 'btn btn-default'%>
+<p><%= link_to 'New Album', new_album_path, class: 'btn btn-default'%> 
+<%= link_to 'New Folder', new_folder_path, class: 'btn btn-default'%>
 </div>
 <% end %>
 <% end %>

@@ -1,10 +1,14 @@
 <h1>Gallery</h1>
-    <% @albums.each do |album| %>
+
+ss
+<% @folder.each do |folder| %>
+<h2><%= folder.title %></h2>
+    <% folder.albums.each do |album| %>
       
         <h3><%= link_to album.title, album %> <small><%= link_to 'Edit', edit_album_path(album) %> | <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></small></h3>
      
     <% end %>
- 
+ <% end %>
 <br>
 
 

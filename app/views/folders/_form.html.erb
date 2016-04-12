@@ -1,0 +1,45 @@
+<div class="smallform">
+	<%= bootstrap_form_for(@folder) do |f| %>
+  <% if @folder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+
+      <ul>
+      <% @folder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+   
+    <%= f.number_field :ranking %>
+  </div>
+  
+    <div class="field">
+    <% unless @folder.avatar.blank? %>
+    <p><b>Current image</b><br/><%= link_to (image_tag @folder.avatar.url(:thumb)), @folder.avatar.url(:display), target: '_blank' %> </p><%= f.file_field :avatar, label: 'Change this photo'%></p>
+    <% else %>
+    <%= f.file_field :avatar, label: 'Add a photo'%>
+    <% end %>
+  </div>
+  
+  <div class="field">
+  
+    <%= f.text_area :description, rows: "5", placeholder: "Add a short description for this folder" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :submit, class: "pull-right btn btn-default" %>
+  </div>
+<% end %>
+</div>
+
+
+
+

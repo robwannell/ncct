@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
 
+  resources :folders
+
   resources :success_stories
 
   resources :raffleitems

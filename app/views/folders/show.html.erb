@@ -1,0 +1,39 @@
+<h1><%= @folder.title %></h1>
+ <% if current_user %> <p><span class="badge"><%= @folder.ranking %> </span> <%= link_to 'Edit', edit_folder_path(@folder) %> | <%= link_to 'Destroy', @folder, method: :delete, data: { confirm: 'Are you sure?' } %></p><% end %>
+  
+ <p> <%= simple_format(@folder.description) %>
+</p>
+
+
+ <div class="col-md-12 ">
+	<% @folder.albums.each do |album| %>
+	 <div class="col-md-6">
+	    <div class="album-title"> <h3><%= link_to album.title, album %> </h3></div>
+	 <div class="album-cover-small"> <% @cover = Photo.where('album_id = ?', album).first %><% unless @cover.blank? %><%= link_to (image_tag @cover.avatar.url(:medium), class: "img-responsive"), album %><% end %></div>
+	<div class="album-description"><p><%= album.description %></p>
+		<p><%= link_to 'View album', album %></p></div>
+</div>
+	<% end %>
+ </div>
+
+
+<p>
+
+
+<% content_for :rh do %>
+
+<div class="well">
+	
+	<%= link_to 'Back to all gallery folders', gallery_path, class: "btn btn-default" %>
+
+	
+<% if current_user %>
+<h4>Admin options</h4>
+<p><%= link_to 'Add a New album to this Folder', new_album_path(:folder_id => @folder.id), class: "btn btn-default" %>
+	<p><% if current_user %><small><%= link_to 'Edit the Folder details', edit_folder_path(@folder), class: "btn btn-default" %>  <%= link_to 'Destroy Folder', @folder, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></small><% end %>
+<% end %>
+
+</div>
+<% end %>
+
+

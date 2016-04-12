@@ -330,8 +330,54 @@ footer .footnav li {
 	padding: 5px 10px 0px 0;
 	
 }
+
+.folders {
+	background-color:#efefef;
+	padding:20px;
+	margin-bottom:10px;
+	clear:both;
+}
+
+.folder-cover img {
+	padding:10px;
+}
+
+.folder-cover p {
+	text-align:center;
+}
+.folders h2 {
+	margin-top:0;
+}
+.albums {
+	text-align:center;
+}
+
+.albums p {
+	text-align: left;
+}
+
+.album-title {
+	min-height:20px;
+}
+
+.album-cover img {
+	margin:0px auto;
+}
+.album-cover {
+	min-height: 320px;
+	padding:10px;
+}
+
+.album-cover-small {
+	min-height: 220px;
+	padding:10px;
+}
+
+.album-description {
+	padding:10px;
+}
 .gallery-albums {
-	float:left;
+	
 	text-align: center;
 	margin-top:20px;
 	width: 350px;

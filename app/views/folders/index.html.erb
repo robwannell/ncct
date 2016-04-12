@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Folders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Ranking</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @folders.each do |folder| %>
+      <tr>
+        <td><%= folder.description %></td>
+        <td><%= folder.ranking %></td>
+        <td><%= link_to 'Show', folder %></td>
+        <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
+        <td><%= link_to 'Destroy', folder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% content_for :rh do %>
+
+<div class="well">
+	
+<span class="glyphicon glyphicon-info-sign info"></span><h4>View this album</h4><p>Click on a photo to view, then navigate through the album using the buttons below each image.</p>
+<p><%= link_to 'Back to all albums', gallery_path, class: "btn btn-default" %>
+	
+
+
+</div>
+<% end %>
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330001102) do
+ActiveRecord::Schema.define(version: 20160412180435) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20160330001102) do
     t.datetime "updated_at",                null: false
     t.string   "slug",        limit: 255
     t.integer  "photo_id",    limit: 4
+    t.integer  "folder_id",   limit: 4
   end
 
+  add_index "albums", ["folder_id"], name: "index_albums_on_folder_id", using: :btree
   add_index "albums", ["slug"], name: "index_albums_on_slug", using: :btree
 
   create_table "announcements", force: :cascade do |t|
@@ -79,6 +81,21 @@ ActiveRecord::Schema.define(version: 20160330001102) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "folders", force: :cascade do |t|
+    t.string   "description",         limit: 255
+    t.integer  "ranking",             limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "title",               limit: 255
+    t.string   "slug",                limit: 255
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "folders", ["slug"], name: "index_folders_on_slug", unique: true, using: :btree
 
   create_table "graduates", force: :cascade do |t|
     t.integer  "counter",    limit: 4
@@ -200,6 +217,7 @@ ActiveRecord::Schema.define(version: 20160330001102) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "albums", "folders"
   add_foreign_key "photos", "albums"
   add_foreign_key "raffleitems", "raffle"
 end

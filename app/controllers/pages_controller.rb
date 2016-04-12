@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   end
   
   def gallery
+    @folders = Folder.all
       @albums = Album.all
     end
     
